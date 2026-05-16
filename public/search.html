@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricerca - Countries Atlas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='none' stroke='%230d6b7d' stroke-width='3'/><circle cx='50' cy='50' r='32' fill='%230d6b7d' opacity='0.3'/><circle cx='38' cy='38' r='12' fill='%230d6b7d'/><rect x='45' y='35' width='10' height='30' fill='%230d6b7d'/><rect x='35' y='45' width='30' height='10' fill='%230d6b7d'/></svg>">
+</head>
+<body>
+    <main class="main-content">
+        <section class="panel page-section">
+            <h2>Ricerca Nazioni</h2>
+            <p class="section-description">Cerca una nazione per nome o per capitale.</p>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="search-type">Tipo ricerca</label>
+                    <select id="search-type">
+                        <option value="name">Nome nazione</option>
+                        <option value="capital">Capitale</option>
+                    </select>
+                </div>
+                <div class="form-group input-wide">
+                    <label for="search-input">Valore</label>
+                    <div class="input-wrapper">
+                        <input id="search-input" type="text" placeholder="Es: Italy oppure Rome" autocomplete="off">
+                        <button id="btn-search" class="btn btn-primary" type="button">Cerca</button>
+                    </div>
+                    <div id="search-suggestions" class="suggestions hidden"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div id="search-results" class="cards-grid"></div>
+        </section>
+    </main>
+
+    <script type="module" src="../scripts/pages/search.js"></script>
+</body>
+</html>

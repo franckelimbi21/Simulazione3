@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Statistiche - Countries Atlas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='none' stroke='%230d6b7d' stroke-width='3'/><circle cx='50' cy='50' r='32' fill='%230d6b7d' opacity='0.3'/><circle cx='38' cy='38' r='12' fill='%230d6b7d'/><rect x='45' y='35' width='10' height='30' fill='%230d6b7d'/><rect x='35' y='45' width='30' height='10' fill='%230d6b7d'/></svg>">
+</head>
+<body>
+    <main class="main-content">
+        <section class="panel page-section">
+            <h2>Dashboard Statistiche</h2>
+            <p class="section-description">
+                Dati da endpoint /all con ordinamento client-side per popolazione, area e densita.
+            </p>
+            <div class="form-grid">
+                <!-- TODO 2: Aggiungere la classe corretta per mostrare i gruppi del form correttamente -->
+                <div class="">
+                    <label for="metric-select">Metrica</label>
+                    <select id="metric-select">
+                        <option value="population">Popolazione</option>
+                        <option value="area">Area geografica</option>
+                        <option value="density">Densita</option>
+                    </select>
+                </div>
+                <div class="">
+                    <label for="order-select">Ordine</label>
+                    <select id="order-select">
+                        <option value="desc">Decrescente</option>
+                        <option value="asc">Crescente</option>
+                    </select>
+                </div>
+                <div class="">
+                    <label for="limit-select">Elementi</label>
+                    <select id="limit-select">
+                        <option value="10">Top 10</option>
+                        <option value="25" selected>Top 25</option>
+                        <option value="50">Top 50</option>
+                        <option value="250">Tutti</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div id="dashboard-table"></div>
+        </section>
+    </main>
+
+    <script type="module" src="../scripts/pages/dashboard.js"></script>
+</body>
+</html>
