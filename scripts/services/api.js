@@ -103,7 +103,24 @@ async function requestCountryList(url, errorPrefix) {
     // e restituire un array di nazioni semplificate.
     // Se la risposta non è ok, lanciare un errore con il messaggio passato in errorPrefix e lo status code.
     // Se la fetch fallisce con un errore 404, restituire un array vuoto (non lanciare l'errore).
-    
+          
+            try {
+            const result = await fetch(url);
+             if (!result.status === 404) {
+                 return [];
+            }
+
+            if (!result.ok){
+                 throw Error("Errore nella fetch " `${result.status}  ${errorPrefix}` );
+            }
+            const data = await result.json();
+           
+            const trasform =  data.map  (mapCountry) ;
+            return trasform;
+         }catch (error) {
+        console.error("Errore durante la fetch o la trasformazione:", error.message);
+        return [];
+    }
 }
 
 /**
@@ -170,7 +187,7 @@ export async function searchCountriesByName(name) {
 export async function searchCountriesByCapital(capital) {
     const query = String(capital || "").trim();
 
-    if (query) {
+    if (!query) {
         return [];
     }
 

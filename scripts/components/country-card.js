@@ -57,13 +57,18 @@ export function createCountryCard({
 
         <div class="country-header">
             <div>
-
+                <<img class="country-flag" src="${country.flag}" alt="Bandiera ${sanitizeHTML(country.name)}">
+                <h1 class="country-title"> ${sanitizeHTML(country.name)} </h1>
                 <p class="country-code">${sanitizeHTML(country.code)}</p>
             </div>
             ${favoriteButton}
         </div>
         <div class="country-meta">
-            
+            <p><strong> capital:</strong> ${sanitizeHTML(country.capital)} </p>
+             <p><strong> region: </strong> ${sanitizeHTML(country.region)} </p>
+              <p><strong>population: </strong> ${sanitizeHTML(country.population)} </p>
+               <p><strong>area: </strong> ${sanitizeHTML(country.area)} km2</p>
+                <p><strong>densityLabel: </strong> ${sanitizeHTML(country.densityLabel)} </p>
         </div>
     `;
 

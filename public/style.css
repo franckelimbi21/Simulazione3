@@ -257,6 +257,7 @@ select {
     background: var(--surface);
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     font-size: 0.95rem;
+    border-radius: var(--radius) ;
 }
 
 select {
@@ -274,6 +275,7 @@ select {
         100% 0;
     background-size: 0.34rem 0.34rem, 0.34rem 0.34rem, 2.3rem 100%;
     background-repeat: no-repeat;
+   
 }
 
 .input-wrapper {
@@ -544,6 +546,9 @@ select {
  */
 .records-table th,
 .records-table td {
+    padding: 0.9rem;
+    border-bottom:  2px solid var(--border);
+    text-align: left;
 }
 
 .records-table th {
